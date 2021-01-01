@@ -14,6 +14,7 @@ function build {
     protoc --go_out=lib/mars-proto-go --js_out=lib/mars-proto-js *.proto
 }
 
+
 CMD=$1
 shift
 $CMD $*
