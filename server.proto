@@ -4,8 +4,6 @@ package marsproto;
 option go_package = ".;marsproto";
 
 message ServerMessage {
-    int32 id = 1;
-    int32 player = 2;
     oneof data {
         Acknowledge ack = 100;
         ActionRequest request = 101;
@@ -18,13 +16,19 @@ message Acknowledge {
         Retry = 1;
         Rejected = 2;
     }
-    AckType ack = 1;
+    int64 id = 1;
+    int64 player = 2;
+
+    AckType ack = 100;
 }
 
 message ActionRequest {
     message Action {
         int32 xxt = 1;
     }
+
+    int64 id = 1;
+    int64 player = 2;
 
     oneof request {
         Action action = 100;

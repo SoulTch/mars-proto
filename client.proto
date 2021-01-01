@@ -4,8 +4,6 @@ package marsproto;
 option go_package = ".;marsproto";
 
 message ClientMessage {
-    int32 id = 1;
-    int32 player = 2;
     oneof data {
         ActionResponse ack = 100;
     }   
@@ -15,6 +13,9 @@ message ActionResponse {
     message Action {
         int32 xxt = 1;
     }
+    
+    int64 id = 1;
+    int64 player = 2;
 
     oneof response {
         Action action = 100;
