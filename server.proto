@@ -20,17 +20,33 @@ message Acknowledge {
     int64 player = 2;
 
     AckType ack = 100;
+    map<string, string> params = 101;
 }
 
 message ActionRequest {
-    message Action {
-        int32 xxt = 1;
-    }
-
     int64 id = 1;
     int64 player = 2;
 
-    oneof request {
-        Action action = 100;
+    string action = 3;
+
+    oneof message {
+        int64 value = 100;
     }
+}
+
+message ReadResponse {
+    int64 id = 1;
+    int64 player = 2;
+
+    oneof message {
+        int64 value = 100;
+    }
+}
+
+message Announce {
+    int64 id = 1;
+    int64 target = 2;
+
+    string resource = 3;
+    map<string, string> params = 4;
 }
