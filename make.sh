@@ -5,6 +5,7 @@ cd `dirname $0`
 CURRENT=`pwd`
 
 function makedir {
+    rm -rf lib
     mkdir -p lib/mars-proto-go
     mkdir -p lib/mars-proto-js
 }
