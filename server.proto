@@ -1,0 +1,32 @@
+syntax = "proto3";
+package marsproto;
+
+option go_package = ".;marsproto";
+
+message ServerMessage {
+    int32 id = 1;
+    int32 player = 2;
+    oneof data {
+        Acknowledge ack = 100;
+        ActionRequest request = 101;
+    }   
+}
+
+message Acknowledge {
+    enum AckType {
+        Accepted = 0;
+        Retry = 1;
+        Rejected = 2;
+    }
+    AckType ack = 1;
+}
+
+message ActionRequest {
+    message Action {
+        int32 xxt = 1;
+    }
+
+    oneof request {
+        Action action = 100;
+    }
+}

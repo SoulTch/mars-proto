@@ -11,7 +11,7 @@ function makedir {
 
 function build {
     makedir
-    protoc --go_out=lib/mars-proto-go --js_out=lib/mars-proto-js mars.proto
+    protoc --go_out=lib/mars-proto-go --js_out=lib/mars-proto-js *.proto
 }
 
 CMD=$1
