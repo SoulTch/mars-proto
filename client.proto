@@ -5,8 +5,8 @@ option go_package = ".;marsproto";
 
 message ClientMessage {
     oneof data {
-        ActionResponse actResp = 100;
-        ReadRequest readReq = 101;
+        ActionResponse act_response = 100;
+        ReadRequest read_request = 101;
     }   
 }
 

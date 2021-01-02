@@ -1,0 +1,9 @@
+syntax = "proto3";
+package marsproto;
+
+option go_package = ".;marsproto";
+
+message Card {
+    string project = 1;
+    int64 id = 2;
+}

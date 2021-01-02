@@ -48,6 +48,13 @@ message Announce {
     int64 id = 1;
     int64 target = 2;
 
-    string resource = 3;
+    enum Resource {
+        NO_ACTION = 0;
+        START_GAME = 1;
+    }
+
+    Resource resource = 3;
     map<string, string> params = 4;
 }
+
+// shared objects

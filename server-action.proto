@@ -1,0 +1,11 @@
+syntax = "proto3";
+package marsproto;
+
+option go_package = ".;marsproto";
+
+import "entity.proto";
+
+message SelectCorporation {
+    repeated Card staring_hand = 1;
+    repeated Card corps = 2;
+}
