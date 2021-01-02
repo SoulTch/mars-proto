@@ -14,13 +14,18 @@ message ActionResponse {
     int64 id = 1;
     int64 player = 2;
 
-    map<string, string> params = 3;
+    int32 value = 100;
+    repeated int32 list = 101;
+    map<string, int32> map = 102;
 }
 
 message ReadRequest {
     int64 id = 1;
     int64 player = 2;
 
-    string resource = 3;
-    map<string, string> params = 4;
+    string resource = 100;
+
+    int32 value = 200;
+    repeated int32 list = 201;
+    map<string, int32> map = 202;
 }
