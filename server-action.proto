@@ -10,6 +10,10 @@ message SelectCorporation {
     repeated Card corps = 2;
 }
 
-message BuyCard {
+message ShopCard {
     repeated Card cards = 1;
+}
+
+message DoAction {
+    repeated int64 AvailableCard = 1;
 }
