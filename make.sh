@@ -13,6 +13,11 @@ function makedir {
 function build {
     makedir
     protoc --go_out=lib/mars-proto-go --js_out=import_style=commonjs,binary:lib/mars-proto-js *.proto
+               
+    for f in lib/mars-proto-js/*.js
+    do
+        echo '/* eslint-disable */' | cat - "${f}" > temp && mv temp "${f}"
+    done
 }
 
 
