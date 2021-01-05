@@ -12,7 +12,7 @@ function makedir {
 
 function build {
     makedir
-    protoc --go_out=lib/mars-proto-go --js_out=lib/mars-proto-js *.proto
+    protoc --go_out=lib/mars-proto-go --js_out=import_style=commonjs,binary:lib/mars-proto-js *.proto
 }
 
 
