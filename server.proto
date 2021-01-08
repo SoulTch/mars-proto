@@ -3,6 +3,8 @@ package marsproto;
 
 option go_package = ".;marsproto";
 
+import "server-action.proto";
+
 message ServerMessage {
     oneof data {
         Acknowledge ack = 100;
@@ -13,9 +15,10 @@ message ServerMessage {
 
 message Acknowledge {
     enum AckType {
-        Accepted = 0;
-        Retry = 1;
-        Rejected = 2;
+        NoAckType = 0;
+        Accepted = 1;
+        Retry = 2;
+        Rejected = 3;
     }
     int64 id = 1;
     int64 player = 2;
@@ -29,7 +32,9 @@ message ActionRequest {
     int64 player = 2;
 
     oneof message {
-        int64 value = 100;
+        SelectCorporation select_corporation = 100;
+        ShopCard shop_card = 101;
+        DoAction do_action = 102;
     }
 }
 
