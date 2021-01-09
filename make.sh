@@ -20,6 +20,12 @@ function build {
     done
 }
 
+function push {
+    build
+    git commit -am "Commit"
+    git push
+}
+
 
 CMD=$1
 shift
