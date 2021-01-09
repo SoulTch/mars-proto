@@ -16,4 +16,5 @@ message ShopCard {
 
 message DoAction {
     repeated int64 AvailableCard = 1;
+    repeated int64 AvailableBasic = 2;
 }
