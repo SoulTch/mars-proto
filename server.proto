@@ -11,6 +11,7 @@ message ServerMessage {
         Acknowledge ack = 100;
         ActionRequest request = 101;
         Announce announce = 102;
+        ReadResponse read_response = 103;
     }   
 }
 
@@ -47,6 +48,16 @@ message ReadResponse {
     int32 discarded_deck = 4;
     int32 draw_deck = 5;
     int32 generation = 6;
+
+    enum GamePhase {
+        NONE_PHASE = 0;
+        BEFORE_START = 1;
+        INITIATING = 2;
+        DURING_GENERATION = 3;
+        WRAP_GENERATION = 4;
+        FINISHED = 5;
+    };
+    GamePhase phase = 50;
 
     message Player {
         int32 id = 1;
